@@ -26,7 +26,7 @@
 | Column      | Type       | Options                      |
 | ----------- | ---------- | ---------------------------- |
 | user_id     | integer    | null: false,foreign_key:true |
-| customer_id | string     | null: false                  |
+| product_id  | references | null: false,foreign_key:true |
 
 
 ### Association
@@ -39,9 +39,7 @@
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| user_id          | integer    | null: false,foreign_key:true   |
-| family_name_kana | string     | null: false                    |
-| first_name_kana  | string     | null: false                    |
+| purchase         | references | null: false,foreign_key:true   |
 | post_code        | string     | null: false                    |
 | prefecture       | string     | null: false                    |
 | city             | string     | null: false                    |
@@ -60,12 +58,12 @@ belongs_to :user
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | name             | string     | null: false                    |
-| price            | string     | null: false                    |
-| description      | string     | null: false                    |
-| status           | string     | null: false                    |
-| shipping_cost    | string     | null: false                    |
-| shipping_days    | string     | null: false                    |
-| prefecture_id    | string     | null: false                    |
+| price            | integer    | null: false                    |
+| description      | text       | null: false                    |
+| status_id        | integer    | null: false                    |
+| shipping_cost_id | integer    | null: false                    |
+| shipping_days_id | integer    | null: false                    |
+| prefecture_id    | integer    | null: false                    |
 | category_id      | integer    | null: false,foreign_key:true   |
 | user_id          | integer    | null: false,foreign_key:true   |
 
