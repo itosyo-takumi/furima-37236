@@ -25,7 +25,7 @@
 
 | Column      | Type       | Options                      |
 | ----------- | ---------- | ---------------------------- |
-| user_id     | integer    | null: false,foreign_key:true |
+| user        | references | null: false,foreign_key:true |
 | product     | references | null: false,foreign_key:true |
 
 
@@ -33,7 +33,7 @@
 
  belongs_to :user
  belongs_to :product
- has_many   :destinations
+ has_one    :destination
 
 
 ## destination テーブル
@@ -66,7 +66,7 @@ belongs_to :purchase
 | shipping_days_id | integer    | null: false                    |
 | prefecture_id    | integer    | null: false                    |
 | category_id      | integer    | null: false                    |
-| user_id          | references | null: false,foreign_key:true   |
+| user             | references | null: false,foreign_key:true   |
 
 
 ### Association
