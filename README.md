@@ -1,6 +1,6 @@
 # テーブル設計
 
-## user テーブル
+## users テーブル
 
 | Column             | Type   | Options       |
 | ------------------ | ------ | --------------|
@@ -21,7 +21,7 @@
  
  
 
-## purchase テーブル
+## purchases テーブル
 
 | Column      | Type       | Options                      |
 | ----------- | ---------- | ---------------------------- |
@@ -36,7 +36,7 @@
  has_one    :destination
 
 
-## destination テーブル
+## destinations テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
@@ -54,7 +54,7 @@
 belongs_to :purchase
 
 
-## productテーブル
+## productsテーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
