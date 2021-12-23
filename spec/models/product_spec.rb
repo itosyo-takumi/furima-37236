@@ -86,33 +86,33 @@ RSpec.describe Product, type: :model do
       end
 
       it 'カテゴリーに「---」が選択されている場合は出品できない' do
-        @product.category_id = '---'
+        @product.category_id = 1
         @product.valid?
-        expect(@product.errors.full_messages).to include('Category is not a number')
+        expect(@product.errors.full_messages).to include('Category must be other than 1')
       end
 
       it '商品の状態に「---」が選択されている場合は出品できない' do
-        @product.status_id = '---'
+        @product.status_id = 1
         @product.valid?
-        expect(@product.errors.full_messages).to include('Status is not a number')
+        expect(@product.errors.full_messages).to include('Status must be other than 1')
       end
 
       it '配送料の負担に「---」が選択されている場合は出品できない' do
-        @product.shipping_cost_id = '---'
+        @product.shipping_cost_id = 1
         @product.valid?
-        expect(@product.errors.full_messages).to include('Shipping cost is not a number')
+        expect(@product.errors.full_messages).to include('Shipping cost must be other than 1')
       end
 
       it '発送元の地域に「---」が選択されている場合は出品できない' do
-        @product.prefecture_id = '---'
+        @product.prefecture_id = 1
         @product.valid?
-        expect(@product.errors.full_messages).to include('Prefecture is not a number')
+        expect(@product.errors.full_messages).to include('Prefecture must be other than 1')
       end
 
       it '発送までの日数に「---」が選択されている場合は出品できない' do
-        @product.shipping_days_id = '---'
+        @product.shipping_days_id = 1
         @product.valid?
-        expect(@product.errors.full_messages).to include('Shipping days is not a number')
+        expect(@product.errors.full_messages).to include('Shipping days must be other than 1')
       end
 
       it 'userが紐付いていなければ出品できない' do
