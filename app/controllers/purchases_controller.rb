@@ -25,7 +25,7 @@ class PurchasesController < ApplicationController
   private
 
   def destination_params
-    params.require(:purchase_destination).permit(:purchase_id,:post_code, :prefecture_id, :city, :address, :building_name, :phone_number, :user_id,).merge(product_id:params[:product_id],user_id:current_user.id, token: params[:token])
+    params.require(:purchase_destination).permit(:post_code, :prefecture_id, :city, :address, :building_name, :phone_number).merge(product_id:params[:product_id],user_id:current_user.id, token: params[:token])
   end
 
   def pay_product
